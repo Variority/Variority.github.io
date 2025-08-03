@@ -226,9 +226,11 @@
       contenido.style.display = 'flex';
 
       setTimeout(() => {
-        contenido.classList.add('fade-in');
-        musica.play();
-      }, 2000); // Espera que termine la animación de salida
+    contenido.classList.add('fade-in');
+    musica.play().catch(error => {
+      console.log("Error al intentar reproducir el audio:", error);
+    });
+  }, 2000); // Espera que termine la animación de salida
     }
   </script>
 
@@ -242,6 +244,7 @@
   </div>
 </div>
 </html>
+
 
 
 
